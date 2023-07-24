@@ -124,6 +124,26 @@ public class CreditAccountTest {
         Assertions.assertEquals(3_000,account. getBalance());
     }
     @Test
+    public void purchaseAmountDoesNotExceedTheBalance() {
+        CreditAccount account = new CreditAccount(
+                3_000,
+                5_000,
+                15
+        );
+        account. pay(2_999);
+        Assertions.assertEquals(1,account. getBalance());
+    }
+    @Test
+    public void purchaseAmountIsEqualToTheBalance() {
+        CreditAccount account = new CreditAccount(
+                3_000,
+                5_000,
+                15
+        );
+        account. pay(3_000);
+        Assertions.assertEquals(0,account. getBalance());
+    }
+    @Test
     public void purchaseAmountIsEqualToTheCreditLimit() {
         CreditAccount account = new CreditAccount(
                 3_000,
@@ -182,11 +202,11 @@ public class CreditAccountTest {
     @Test
     public void addToNegativeBalance() {
         CreditAccount account = new CreditAccount(
-                -1,
+                1,
                 5_000,
                 15
         );
-
+        account.pay(2);
         account.add(3_000);
 
         Assertions.assertEquals(2_999, account.getBalance());
@@ -194,11 +214,11 @@ public class CreditAccountTest {
     @Test
     public void zeroReplenishment() {
         CreditAccount account = new CreditAccount(
-                -1,
+                0,
                 5_000,
                 15
         );
-
+        account.pay(1);
         account.add(0);
 
         Assertions.assertEquals(-1, account.getBalance());
@@ -206,24 +226,25 @@ public class CreditAccountTest {
     @Test
     public void negativeReplenishment() {
         CreditAccount account = new CreditAccount(
-                -1,
+                0,
                 5_000,
                 15
         );
 
         account.add(-1);
 
-        Assertions.assertEquals(-1, account.getBalance());
+        Assertions.assertEquals(0, account.getBalance());
     }
 
     // Метод yearChange
     @Test
     public void calculationOfInterestOnNegativeBalance() {
         CreditAccount account = new CreditAccount(
-                -200,
+                0,
                 5_000,
                 15
         );
+        account.pay(200);
 
         Assertions.assertEquals(-30, account.yearChange());
     }
