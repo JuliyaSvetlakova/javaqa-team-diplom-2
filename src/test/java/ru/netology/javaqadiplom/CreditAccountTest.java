@@ -9,14 +9,12 @@ public class CreditAccountTest {
     //Rate
     @Test
     public void IllegalArgumentExceptionWithNegativeRate() {
-        CreditAccount account = new CreditAccount(
-                0,
-                5_000,
-                -1
-        );
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            account.getRate();
+            new CreditAccount(
+                    0,
+                    5_000,
+                    -1);
         });
     }
     @Test
@@ -41,14 +39,12 @@ public class CreditAccountTest {
     //InitialBalance
     @Test
     public void IllegalArgumentExceptionWithNegativeInitialBalance() {
-        CreditAccount account = new CreditAccount(
-                -1,
-                5_000,
-                15
-        );
 
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            account.getBalance();
+            new CreditAccount(
+                    -1,
+                    5_000,
+                    15);
         });
     }
     @Test
@@ -73,14 +69,12 @@ public class CreditAccountTest {
     //CreditLimit
     @Test
     public void IllegalArgumentExceptionWithNegativeCreditLimit() {
-        CreditAccount account = new CreditAccount(
-                0,
-                -1,
-                15
-        );
-
+       
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            account.getCreditLimit();
+            new CreditAccount(
+                    0,
+                    -1,
+                    15);
         });
     }
     @Test
