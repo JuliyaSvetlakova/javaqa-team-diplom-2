@@ -198,7 +198,7 @@ public class SavingAccountTest {
                 5
         );
         account.pay(1_000);
-        Assertions.assertEquals(1_000, account.getMinBalance());
+        Assertions.assertEquals(1_000, account.getBalance());
     }
 
     @Test
@@ -210,7 +210,7 @@ public class SavingAccountTest {
                 5
         );
         account.pay(-5);
-        Assertions.assertEquals(2_000, account.getMinBalance());
+        Assertions.assertEquals(2_000, account.getBalance());
     }
 
     @Test
@@ -222,7 +222,7 @@ public class SavingAccountTest {
                 5
         );
         account.pay(0);
-        Assertions.assertEquals(2_000, account.getMinBalance());
+        Assertions.assertEquals(2_000, account.getBalance());
     }
 
     //Метод Add
@@ -237,7 +237,7 @@ public class SavingAccountTest {
 
         account.add(8_000);
 
-        Assertions.assertEquals(10_000, account.getMaxBalance());
+        Assertions.assertEquals(10_000, account.getBalance());
     }
     @Test
     public void addMoreMaxBalance() {
@@ -250,7 +250,7 @@ public class SavingAccountTest {
 
         account.add(15_000);
 
-        Assertions.assertEquals(2_000, account.getMaxBalance());
+        Assertions.assertEquals(2_000, account.getBalance());
     }
 
     @Test
@@ -264,7 +264,7 @@ public class SavingAccountTest {
 
         account.add(-5);
 
-        Assertions.assertEquals(2_000, account.getMaxBalance());
+        Assertions.assertEquals(2_000, account.getBalance());
     }
 
     @Test
@@ -278,7 +278,7 @@ public class SavingAccountTest {
 
         account.add(0);
 
-        Assertions.assertEquals(2_000, account.getMaxBalance());
+        Assertions.assertEquals(2_000, account.getBalance());
     }
 
     // Метод yearChange
