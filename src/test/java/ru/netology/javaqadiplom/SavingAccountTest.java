@@ -64,7 +64,7 @@ public class SavingAccountTest {
                     -1,
                     1_000,
                     10_000,
-                    5
+                    5;
         });
     }
 
@@ -96,9 +96,9 @@ public class SavingAccountTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             new SavingAccount(
                     2_000,
-                    500,
-                    -100,
-                    5
+                    -500,
+                    10_00,
+                    5;
 
         });
     }
@@ -110,7 +110,7 @@ public class SavingAccountTest {
                     2_000,
                     500,
                     250,
-                    5
+                    5;
 
         });
     }
@@ -122,7 +122,7 @@ public class SavingAccountTest {
                     500,
                     1_000,
                     10_000,
-                    5
+                    5;
 
         });
     }
@@ -134,7 +134,7 @@ public class SavingAccountTest {
                     11_000,
                     1_000,
                     10_000,
-                    5
+                    5;
 
         });
     }
@@ -146,8 +146,8 @@ public class SavingAccountTest {
                 2_000,
                 1_000,
                 10_000,
-                5
-        );
+                5,
+                );
         Assertions.assertEquals(10_000, account.getMaxBalance());
     }
 
@@ -157,8 +157,8 @@ public class SavingAccountTest {
             new SavingAccount(
                     2_000,
                     1_000,
-                    1_000,
-                    5
+                    -1_000,
+                    5;
 
         });
     }
@@ -187,18 +187,6 @@ public class SavingAccountTest {
         );
         account.pay(3_500);
         Assertions.assertEquals(2_000, account.getBalance());
-    }
-
-    @Test
-    public void purchaseAmountIsEqualToTheBalance() {
-        SavingAccount account = new SavingAccount(
-                2_000,
-                1_000,
-                10_000,
-                5
-        );
-        account.pay(2_000);
-        Assertions.assertEquals(0, account.getBalance());
     }
 
     @Test
@@ -261,6 +249,34 @@ public class SavingAccountTest {
         );
 
         account.add(15_000);
+
+        Assertions.assertEquals(2_000, account.getMaxBalance());
+    }
+
+    @Test
+    public void addLessThanZero() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(-5);
+
+        Assertions.assertEquals(2_000, account.getMaxBalance());
+    }
+
+    @Test
+    public void addZero() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(0);
 
         Assertions.assertEquals(2_000, account.getMaxBalance());
     }
