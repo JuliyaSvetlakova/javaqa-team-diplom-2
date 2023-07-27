@@ -198,7 +198,7 @@ public class SavingAccountTest {
                 5
         );
         account.pay(1_000);
-        Assertions.assertEquals(0, account.getMinBalance());
+        Assertions.assertEquals(1_000, account.getMinBalance());
     }
 
     @Test
