@@ -28,7 +28,7 @@ public class SavingAccountTest {
                     2_000,
                     1_000,
                     10_000,
-                    -5
+                    -5);
         });
     }
 
@@ -64,7 +64,7 @@ public class SavingAccountTest {
                     -1,
                     1_000,
                     10_000,
-                    5;
+                    5);
         });
     }
 
@@ -88,7 +88,7 @@ public class SavingAccountTest {
                 10_000,
                 5
         );
-        Assertions.assertEquals(1_000, account.getMinBalance();
+        Assertions.assertEquals(1_000, account.getMinBalance());
     }
 
     @Test
@@ -98,7 +98,7 @@ public class SavingAccountTest {
                     2_000,
                     -500,
                     10_00,
-                    5;
+                    5);
 
         });
     }
@@ -110,7 +110,7 @@ public class SavingAccountTest {
                     2_000,
                     500,
                     250,
-                    5;
+                    5);
 
         });
     }
@@ -122,7 +122,7 @@ public class SavingAccountTest {
                     500,
                     1_000,
                     10_000,
-                    5;
+                    5);
 
         });
     }
@@ -134,7 +134,7 @@ public class SavingAccountTest {
                     11_000,
                     1_000,
                     10_000,
-                    5;
+                    5);
 
         });
     }
@@ -146,8 +146,8 @@ public class SavingAccountTest {
                 2_000,
                 1_000,
                 10_000,
-                5,
-                );
+                5
+        );
         Assertions.assertEquals(10_000, account.getMaxBalance());
     }
 
@@ -158,7 +158,7 @@ public class SavingAccountTest {
                     2_000,
                     1_000,
                     -1_000,
-                    5;
+                    5);
 
         });
     }
@@ -239,6 +239,7 @@ public class SavingAccountTest {
 
         Assertions.assertEquals(10_000, account.getBalance());
     }
+
     @Test
     public void addMoreMaxBalance() {
         SavingAccount account = new SavingAccount(
