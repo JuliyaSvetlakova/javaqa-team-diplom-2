@@ -222,7 +222,7 @@ public class SavingAccountTest {
 
         account.add(3_000);
 
-        Assertions.assertEquals(5_000, account.getMaxBalance());
+        Assertions.assertEquals(5_000, account.getBalance());
     }
     @Test
     public void addToEqualMaxBalance() {
