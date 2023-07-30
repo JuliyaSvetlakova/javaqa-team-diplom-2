@@ -132,12 +132,8 @@ public class SavingAccountTest {
                 2_000,
                 1_000,
                 10_000,
-<<<<<<< HEAD
-                5
-        );
-=======
                 5);
->>>>>>> 883911589c34a1c235bb69bd0b7011bf7a694ce9
+
         Assertions.assertEquals(10_000, account.getMaxBalance());
     }
 
@@ -149,10 +145,6 @@ public class SavingAccountTest {
                     1_000,
                     -1_000,
                     5);
-<<<<<<< HEAD
-
-=======
->>>>>>> 883911589c34a1c235bb69bd0b7011bf7a694ce9
         });
     }
 
