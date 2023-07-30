@@ -5,20 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class SavingAccountTest {
 
-    @Test
-    public void shouldAddLessThanMaxBalance() {
-        SavingAccount account = new SavingAccount(
-                2_000,
-                1_000,
-                10_000,
-                5
-        );
-
-        account.add(3_000);
-
-        Assertions.assertEquals(2_000 + 3_000, account.getMaxBalance());
-    }
-
     //CreditAccount
     //Rate
     @Test
@@ -146,8 +132,12 @@ public class SavingAccountTest {
                 2_000,
                 1_000,
                 10_000,
+<<<<<<< HEAD
                 5
         );
+=======
+                5);
+>>>>>>> 883911589c34a1c235bb69bd0b7011bf7a694ce9
         Assertions.assertEquals(10_000, account.getMaxBalance());
     }
 
@@ -159,7 +149,10 @@ public class SavingAccountTest {
                     1_000,
                     -1_000,
                     5);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 883911589c34a1c235bb69bd0b7011bf7a694ce9
         });
     }
 
@@ -226,6 +219,19 @@ public class SavingAccountTest {
     }
 
     //Метод Add
+    @Test
+    public void shouldAddLessThanMaxBalance() {
+        SavingAccount account = new SavingAccount(
+                2_000,
+                1_000,
+                10_000,
+                5
+        );
+
+        account.add(3_000);
+
+        Assertions.assertEquals(5_000, account.getMaxBalance());
+    }
     @Test
     public void addToEqualMaxBalance() {
         SavingAccount account = new SavingAccount(
